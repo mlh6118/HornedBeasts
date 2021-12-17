@@ -20,7 +20,7 @@ class Beast extends React.Component {
     // console.log(this.state);
     return(
       <div onClick={this.handleClick}>
-        <Image src={this.props.image_url} alt={this.props.alt} rounded fluid />
+        <Image src={this.props.src} alt={this.props.alt} rounded fluid />
         <h3>💜{this.state.likes}</h3>
       </div>
     );
