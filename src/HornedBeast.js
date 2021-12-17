@@ -1,18 +1,17 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card';
 import './App.css';
+import BeastImage from './BeastImage';
 
 class HornedBeast extends React.Component {
   render () {
     return(
-      <>
-        <h2>
-          {this.props.title}
-        </h2>
-        <img src={this.props.image_url} className={this.props.className} alt={this.props.alt} />
-        <p>
-          {this.props.description}
-        </p>
-      </>
+      <Card style={{ width: "18rem" }}>
+        <Card.Title>{this.props.beast.title}</Card.Title>
+        {/* <Card.Img src={this.props.beast.image_url} className={this.props.beast.className} alt={this.props.beast.description} /> */}
+        <BeastImage src={this.props.beast.image_url} alt={this.props.beast.description} />
+        <Card.Text>{this.props.beast.description}</Card.Text>
+      </Card>
     );
   }
 }
