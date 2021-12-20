@@ -2,10 +2,7 @@ import React from 'react';
 import HornedBeast from './HornedBeast';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
 import beastData from './data.json';
-// import BeastImg from './BeastImage';
-// import Beast from './BeastImage';
 
 class Main extends React.Component {
   render () {
