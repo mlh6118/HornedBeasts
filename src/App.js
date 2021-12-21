@@ -6,8 +6,9 @@ import Main from './Main.js';
 import Footer from './Footer.js';
 import beast from './data.json';
 import beastData from './data.json';
-import BeastModal from './BeastModal.js';
+// import BeastModal from './BeastModal.js';
 
+import SelectedBeast from './SelectedBeast.js';
 
 class App extends React.Component {
 
@@ -26,9 +27,6 @@ class App extends React.Component {
   // function will need which beast was selected.
   updateSelectedBeast = (clickedBeast) => {
     this.setState({show: true});
-    (clickedBeast === beastObj.title) {
-      
-    }
   }  
 
   onHide = () => {
@@ -40,8 +38,10 @@ class App extends React.Component {
       <Container className="App">
         <Header title='The Horned Beast Encyclopedia'/>
         <Main beastData={beastData} imageURLs={beast}/>
+        <SelectedBeast />
         <Footer text='&copy; 2021 Marni Hager'/>
-        <BeastModal selectedBeast={this.state.selectedBeast} show={this.state.show} onHide={this.onHide} />
+        {/* <BeastModal selectedBeast={this.state.selectedBeast} show={this.state.show} onHide={this.onHide} /> */}
+        <SelectedBeast selectedBeast={this.state.selectedBeast} show={this.state.show} onHide={this.onHide} />
       </Container>
     );
   }

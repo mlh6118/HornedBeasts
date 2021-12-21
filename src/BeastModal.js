@@ -6,18 +6,18 @@ class BeastModal extends React.Component {
   render () {
     return(
       <div className="BeastModal">
-        <modal show={this.props.show} onHide={this.props.onHide}>
+        <Modal show={this.props.show} onHide={this.props.onHide}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.beast.title}</Modal.Title>
+            <Modal.Title>{this.props.beastData.title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {this.props.beast.image_url}
-            {this.props.beast.description}
+            {this.props.beastObj.image_url}
+            {this.props.beastObj.description}
           </Modal.Body>
           <Modal.Footer>
             <Button>Close</Button>
           </Modal.Footer>
-        </modal>
+        </Modal>
       </div>
     );
   }
