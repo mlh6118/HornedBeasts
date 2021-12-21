@@ -2,8 +2,8 @@ import React from 'react';
 import HornedBeast from './HornedBeast';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import beastData from './data.json';
-import SelectedBeast from './Footer';
+// import beastData from './data.json';
+// import SelectedBeast from './Footer';
 
 class Main extends React.Component {
 
@@ -14,7 +14,6 @@ class Main extends React.Component {
     }
   }
 
-  
 
   render () {
     console.log(this.props.image_url);
@@ -24,7 +23,7 @@ class Main extends React.Component {
             {/* this.props.beastData is coming from app.js. */}
             {this.props.beastData.map((beastObj, idx) => (
               // variable={actual object passed} and variable is the name to be used in this.props.variable for child.
-              <HornedBeast beast={beastObj} key={idx} />
+              <HornedBeast beast={beastObj} key={idx} showModal={this.props.showModal} />
             ))}
                 
           </Row>
