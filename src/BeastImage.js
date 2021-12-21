@@ -11,9 +11,11 @@ class Beast extends React.Component {
   }
 
   handleClick = () => {
+    console.log("You are in BeastImage.js")
     this.setState({
       likes: this.state.likes + 1,
     })
+    this.props.showModal(this.props.beast);
   }
 
   render () {
