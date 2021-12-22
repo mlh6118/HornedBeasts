@@ -2,6 +2,7 @@ import React from 'react';
 import HornedBeast from './HornedBeast';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import BeastForm from './BeastForm.js';
 // import beastData from './data.json';
 // import SelectedBeast from './Footer';
 
@@ -19,6 +20,7 @@ class Main extends React.Component {
     console.log(this.props.image_url);
       return(
         <Container className="main">
+          <BeastForm beastData={this.props.beastData} />
           <Row sm={1} md={2} lg={3} xl={4}>
             {/* this.props.beastData is coming from app.js. */}
             {this.props.beastData.map((beastObj, idx) => (

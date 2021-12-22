@@ -17,9 +17,15 @@ class App extends React.Component {
     this.state = {
       show: false,
       // SelectedBeast needs to know which beast to choose.
-      selectedBeast: {}  // This is an empty object because it will be updated down in setState.
+      selectedBeast: {},  // This is an empty object because it will be updated down in setState.
+      galleryBeasts: []
     }
   }
+
+  // TODO: Define a function that will update the galleryBeasts state based on the user's choice.
+  // 1. Accept new filtered beast array and set it in state.
+  // 2. Pass into Main.
+  // 3. Main will map and render this, which it already does. Just need to change variable name. (Done)
 
   // app.js --> main.js --> hornedbeast.js (renders all beasts)
   // function (passed to main) --> call it in hornedbeast via props
@@ -51,7 +57,7 @@ class App extends React.Component {
     return (
       <Container className="App">
         <Header title='The Horned Beast Encyclopedia'/>
-        <Main beastData={beastData} imageURLs={beast} showModal={this.showModal} />
+        <Main galleryBeasts={beastData} imageURLs={beast} showModal={this.showModal} />
         {/* <SelectedBeast /> */}
         <Footer text='&copy; 2021 Marni Hager'/>
         {/* <BeastModal selectedBeast={this.state.selectedBeast} show={this.state.show} onHide={this.onHide} /> */}
