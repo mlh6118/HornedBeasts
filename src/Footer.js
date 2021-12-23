@@ -5,7 +5,7 @@ class SelectedBeast extends React.Component {
   render () {
     return(
       <>
-        &copy; 2021 Marni Hager
+
       </>
     );
   }
