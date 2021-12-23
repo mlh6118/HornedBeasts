@@ -6,6 +6,7 @@ class BeastModal extends React.Component {
   render () {
     return(
       <div className="BeastModal">
+        {/* // Obtain all of the props for the Modal from showModal in App.js. */}
         <Modal show={this.props.show} onHide={this.props.onHide}>
           <Modal.Header closeButton>
             <Modal.Title>{this.props.beastData.title}</Modal.Title>

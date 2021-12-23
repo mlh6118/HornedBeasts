@@ -10,6 +10,7 @@ class Beast extends React.Component {
     }
   }
 
+  // This function handles the number of likes of a beast and passes it back to App.js to be passed down to HornedBeast.
   handleClick = () => {
     console.log("You are in BeastImage.js")
     this.setState({
@@ -18,8 +19,8 @@ class Beast extends React.Component {
     this.props.showModal(this.props.beast);
   }
 
+  // Render the number of likes, along with a heart for each animal.
   render () {
-    // console.log(this.state);
     return(
       <div onClick={this.handleClick}>
         <Image src={this.props.src} alt={this.props.alt} rounded fluid />
