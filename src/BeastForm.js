@@ -3,25 +3,35 @@ import Form from 'react-bootstrap/Form';
 import allBeastData from './data.json';
 
 class BeastForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      numHorns: allHorns, // What should this be to have all showing?
-    }
-  }
 
   // Put event handler here.
   handleChange = (event) => {
+    // Do a check to make sure the code is getting the value expected.
     console.log(event.target.value);
+
+    // Set up a variable to put the value obtained from the user selection.  Variable values are defined below in the if statements.
     const choice = event.target.value;
+    // Set up an empty variable to be used for storing all the filtered beasts.  This variable will be lifted to App.js after the choice is made.
     let updatedChoice;
 
     if (choice === "1") {
-      updatedChoice = allBeastData.filter(creature => creature.horns === "1");
+      updatedChoice = allBeastData.filter(creature => creature.horns === 1);
     }
-    // TODO: After all if-else checks, lift state by calling the function that is defined in App.js.
-    // 1. Pass it the updatedChoice which is to be saved into state in the App.js.
+    else if (choice === "2") {
+      updatedChoice = allBeastData.filter(creature => creature.horns === 2);
+    }
+    else if (choice === "3") {
+      updatedChoice = allBeastData.filter(creature => creature.horns === 3);
+    }
+    else if (choice === "100") {
+      updatedChoice = allBeastData.filter(creature => creature.horns === 100);
+    }
+    else if (choice === "0") {
+      updatedChoice = allBeastData;
+    }
 
+    // This is the function call which is lifting state of updatedChoice back to App.js.  updateGalleryBeasts is the function defined in App.js.
+    this.props.updateGalleryBeasts(updatedChoice); 
   }
 
 
